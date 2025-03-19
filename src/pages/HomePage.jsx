@@ -47,8 +47,10 @@ const HomePage = () => {
                 >
                   시작하기
                 </Link>
+                {/* 아래 a 태그의 href="#features" 는 그대로 두어도 ESLint가 경고를 띄우지 않습니다 
+                    (#features는 실제 앵커로서 페이지 내 이동) */}
                 <a 
-                  href="#features" 
+                  href="#features"
                   className="px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-md hover:bg-blue-50 mb-4"
                 >
                   기능 살펴보기
@@ -110,10 +112,17 @@ const HomePage = () => {
 
         <footer className="mt-16 py-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 mb-4 md:mb-0">© {new Date().getFullYear()} 백준 코드 싱크. All rights reserved.</p>
+            <p className="text-gray-600 mb-4 md:mb-0">
+              © {new Date().getFullYear()} 백준 코드 싱크. All rights reserved.
+            </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-gray-900">이용약관</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">개인정보처리방침</a>
+              {/* 기존에 href="#"였던 부분 -> 임시로 "/terms" 등으로 교체 */}
+              <a href="/terms" className="text-gray-600 hover:text-gray-900">
+                이용약관(임시 링크)
+              </a>
+              <a href="/privacy" className="text-gray-600 hover:text-gray-900">
+                개인정보처리방침(임시 링크)
+              </a>
               <a 
                 href="https://github.com/yourusername/your-repo" 
                 target="_blank" 
